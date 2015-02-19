@@ -1,0 +1,29 @@
+<div class='panel panel-primary'>
+<div class="panel-heading" style="font-size:large">Product List</div>
+<div class="panel-body">
+	<table class="table">
+		<thead>
+			<tr>
+				<th><button type="button" ng-click="pc.toggleImage()" class="btn btn-primary">{{pc.showImage ? "Hide " : "Show "}}Image</button></th>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Lauchdate</th>
+				<th>Net Worth</th>
+				<th>Category</th>
+				<th>Web Link</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="product in pc.products">
+				<td><img ng-if="pc.showImage" ng-src="{{product.image}}" style="width:50px; margin:2px" title="{{product.name}}"></td>
+				<td>{{product.name}}</td>
+				<td>{{product.description}}</td>
+				<td>{{product.lauchdate}}</td>
+				<td>{{product.price}}</td>
+				<td>{{product.category}}</td>
+				<td>{{product.url}}</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+</div>

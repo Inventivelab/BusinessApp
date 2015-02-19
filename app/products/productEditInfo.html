@@ -1,0 +1,82 @@
+<form class="form-horizontal" name="productForm" novalidate>
+	<fieldset>
+		<legend>Basic Product Information</legend>
+		<div class="form-group" ng-class="{'has-error': productForm.inputProductName.$invalid && productForm.inputProductName.$dirty}">
+			<label  class="col-md-2 control-label" for="InputProductName">Product Name</label>
+			<div class="col-md-4">
+				<input class="form-control" id="inputProductName" name="inputProductName" type="text" placeholder="Product Name (required)" ng-model="pc.product.name" required 
+				ng-minlength="4"
+				ng-maxlength="14"/>
+				</div>
+				<span class="help-block has-error">
+					<span ng-show="productForm.inputProductName.$error.required">Product name is required.</span>
+					<span ng-show="productForm.inputProductName.$error.minlength">Product name must be at least 4 characters in length.</span>
+					<span ng-show="productForm.inputProductName.$error.maxlength">Product name cannot exceed 14 characters in length.</span>
+				</span>
+
+					<!--  This work only form Angular version 1.3 up -->
+
+				<!-- <span class="help-block has-error">
+					<span ng-messages="productForm.inputProductName.$error">
+						<span ng-message="required">Product name is required</span>
+						<span ng-message="minlength">Minimum of 4 characters</span>
+						<span ng-message="maxlength">Maximum of 14 characters</span>
+					</span>
+				</span>  -->
+<!-- 
+				For validate with just one message -->
+
+				<!-- <span class="help-block has-error" ng-show="productForm.inputProductName.$invalid">Product name is required</span> -->
+				</div>
+
+					<div class="form-group" ng-class="{'has-error': productForm.contactInfo.$invalid && productForm.contactInfo.$dirty}">
+			<label for="contactInfo" class="col-md-2 control-label">Phone No</label>
+			<div class="col-md-4">
+				<input class="form-control" id="contactInfo" name="contactInfo" ui-mask="999-999-9999 (required)" ng-model="pc.product.phone" required/>
+			</div>
+			<span class="help-block has-error" ng-show="productForm.contactInfo.$invalid">Telephone no is required</span>
+				</div>
+		</div>
+
+			<div class="form-group">
+			<label for="lauchDate" class="col-md-2 control-label">Lauch date</label>
+			<div class="col-md-4">
+			<div class="input-group">
+				<input class="form-control" id="lauchDate" type="text" datepicker-popup="MMM dd, yyyy" is-open="pc.opened"
+			 ng-model="pc.product.lauchdate"/>
+			 <span class="input-group-btn">
+			 	<button class="btn btn-default" ng-click="pc.open($event)">
+			 		<i class="glyphicon glyphicon-calendar" />
+			 	</button>
+			 	</span>
+			 	</div>
+			</div>
+		</div>
+
+			<div class="form-group" ng-class="{'has-error': productForm.productDesc.$invalid && productForm.productDesc.$dirty}">
+			<label for="productDesc" class="col-md-2 control-label">Description</label>
+			<div class="col-md-4">
+				<textarea class="form-control" id="productDesc" name="productDesc"  placeholder="Product Description (required)" ng-model="pc.product.description" required
+				ng-minlength="12"
+				ng-maxlength="212"/>
+				</div>
+				<span class="help-block has-error" ng-show="productForm.productDesc.$invalid">Product description is required</span>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-md-4 col-md-offset-2">
+				<span>
+					<button class="btn btn-primary" style="width:80px;margin-right:10px" ng-click="pc.submit()" ng-disabled="productForm.$invalid">
+					Save</button></span>
+
+				<!-- 		Another option to disabled the submit button until data is valid -->
+				<!-- 	ng-click="pc-submit(productForm.$valid)"> -->
+
+					<span>
+					<button class="btn btn-default" style="width:70px" ng-click="pc.cancel()">Cancel</button></span>
+					</div>
+					</div>
+		
+	</fieldset>
+	</form>

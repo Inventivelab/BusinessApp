@@ -1,0 +1,39 @@
+<form class="form-horizontal" name="productTagForm">
+	<fieldset>
+		<legend>Product Search Tags</legend>
+		<div class="form-group">
+			<label for="inputSearchTags" class="col-md-2 control-label">Search Tags</label>
+			<div class="col-md-8">
+				<input class="form-control" id="inputSearchTags" type="text" 
+				placeholder="Product searh keywords seperated by commas" ng-model="pc.newTags"/>
+				</div>
+				<div class="col-md-1">
+				<button type='button' class='btn btn-success' title="Add the specific tags"
+				ng-click="pc.addTags(pc.newTags)">Add Tags</button>
+				</div>
+				</div>
+				<div class="row col-md-8 col-md-offset-2">
+					<span ng-repeat="tag in pc.product.tags | orderBy">
+						<button class="btn btn-default" style="font-size:smaller;margin-bottom:12px"
+						ng-click="pc.removeTag($index)">{{tag}}
+						<span class="glyphicon glyphicon-remove"></span>
+						</button>
+					</span>
+					</div>
+
+					<div class="form-group">
+						<div class="col-md-4 col-md-offset-2">
+						<span>
+							<button class="btn btn-primary" style="width:80px;margin-right:10px"
+							type="submit" ng-click="pc.submit()" ng-disable="productTagForm.$invalid">Save</button>
+						</span>
+						<span>
+							<button class="btn btn-default" style="width:70px"
+							ng-click="pc.cancel()">Cancel</button>
+						</span>
+						</div>
+			
+					</div>
+		
+	</fieldset>
+	</form>

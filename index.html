@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Business App</title>
+	<!-- Style Sheets -->
+	<link rel="stylesheet" href="css/css/bootstrap.css">
+  <link rel="stylesheet" href="css/style/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
+	
+	<!-- Library Scripts -->
+	 <!-- <//script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script> -->
+   <script src="script/jquery-2.1.3.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
+	<!-- <//script src="script/angular.min.js"></script> -->
+	<script src="script/angular-resource.js"></script>
+	<script src="script/angular-mocks.js"></script>
+	<script src="script/angular-ui-router.js"></script>
+  <script src="css/js/bootstrap.min.js"></script>
+  <script src="script/ui-utils.js"></script>
+  <script src="script/ui-bootstrap-tpls-0.12.0.min.js"></script>
+  <script src="script/d3.min.js"></script>
+  <script src="script/angular-charts.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.js"></script>
+
+	
+	
+	<!-- Application Scripts -->
+	<script src="app/app.js"></script>
+
+	<!-- Products Controllers Scripts -->
+	<script src="app/products/productController.js"></script>
+  <script src="app/products/productDetailController.js"></script>
+  <script src="app/products/productEditController.js"></script>
+
+  <!-- Price Controllers Scripts -->
+  <script src="app/prices/priceAnalyticsController.js"></script>
+
+	<!-- Services Scripts -->
+	<script src="app/services/common.services.js"></script>
+	<script src="app/services/productResource.js"></script>
+	<script src="app/services/productResourceMock.js"></script>
+  <script src="app/services/productService.js"></script>
+</head>
+<body ng-app="myApp">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" ui-sref='home'>Inventtive</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+ 
+      <ul class="nav navbar-nav navbar-right">
+       <li><a ui-sref="priceAnalytics">Price Analytics</a></li>
+      <li><a ui-sref="productList">Product List</a></li>
+        <li><a ui-sref="productEdit.info({productId:0})"><i class="glyphicon glyphicon-plus"></i>Add Product</a></li>
+       
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+	<div class='container'>
+		<div data-ui-view></div>
+	</div>
+</body>
+</html>

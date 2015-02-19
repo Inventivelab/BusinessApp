@@ -1,0 +1,63 @@
+<div class="panel panel-primary">
+<div class="panel-heading" style="font-size:large">{{pc.title}}</div>
+
+<div class="panel-body">
+	<div class="row">
+		<div class="col-md-6">
+			<div class="row">
+				<div class="col-sm-2">Name:</div>
+				<div class="col-sm-6">{{pc.product.name}}</div>
+				</div>
+			<div class="row">
+				<div class="col-sm-2">Description:</div>
+				<div class="col-sm-6">{{pc.product.description}}</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-2">Web Link:</div>
+				<div class="col-sm-6">{{pc.product.url}}</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-2">Lauch Date:</div>
+				<div class="col-sm-6">{{pc.product.lauchdate}}</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-2">Contact-nfo:</div>
+				<div class="col-sm-6">{{pc.product.phone}}</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-2">Price:</div>
+				<div class="col-sm-6">{{pc.product.cost | currency}}</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-2">Net Worth:</div>
+				<div class="col-sm-6">{{pc.product.price | currency}}</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-2">Margin:</div>
+				<div class="col-sm-6">{{pc.marginPercent | number:0}}%</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-2">Category:</div>
+				<div class="col-sm-6">{{pc.product.category}}</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-2">tags:</div>
+				<div class="col-sm-6">{{pc.product.tagTag}}
+			</div>
+		</div>
+	</div>
+
+		<div class="col-md-6">
+			<img class="center-block img-responsive" style="width:200px; margin:2px;"
+			ng-src="{{pc.product.image}}" title="{{pc.product.name}}">
+		</div>
+	</div>
+</div>
+
+<div class="panel-footer">
+		<a class="btn btn-default" ui-sref="productList" style="width:80px"> <i class="glyphicon glyphicon-chevron-left"></i>Back</a>
+		<a class="btn btn-primary" ui-sref="productEdit.info({productEdit:pc.product.productId})" style="width:80px;margin-left:10px">Edit</a>
+</div>
+</div>
+
